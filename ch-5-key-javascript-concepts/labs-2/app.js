@@ -6,8 +6,22 @@ const assert = require('assert')
 // leopard prototype must have ONLY a hiss method
 // lynx prototype must have ONLY a purr method
 // cat prototype must have ONLY a meow method
+const cat = {
+    meow: function() { console.log(`${this.name}: meow`) }
+}
 
-const felix = null //TODO replace null with instantiation of a cat
+const lynx = Object.create(cat, {
+    purr: { value: function() { console.log(`${this.name}: prrr`) }}
+})
+
+const leopard = Object.create(lynx, {
+    hiss: { value: function() { console.log(`${this.name}: hsss`) }}
+})
+
+// const felix = null //TODO replace null with instantiation of a cat
+const felix = Object.create(leopard, {
+    name: { value: 'Felix the cat' }
+})
 felix.meow() // prints Felix the cat: meow
 felix.purr() // prints Felix the cat: prrr
 felix.hiss() // prints Felix the cat: hsss
