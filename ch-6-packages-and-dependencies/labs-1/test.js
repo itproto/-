@@ -7,5 +7,7 @@ assert.doesNotThrow(() => {
 }, 'nonsynchronous should be installed')
 const { devDependencies = {} } = pkg
 const devDeps = new Set(Object.keys(devDependencies))
+console.log('devDeps')
+console.log(devDeps)
 assert(devDeps.has('nonsynchronous'), 'nonsynchronous should be specified as a devDependency')
 console.log('passed')
