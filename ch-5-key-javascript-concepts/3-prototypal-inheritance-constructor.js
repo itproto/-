@@ -39,5 +39,5 @@ rufus.howl() // prints "Rufus the dog: awoooooooo"
 console.log(Object.getPrototypeOf(rufus) === Dog.prototype) //true
 console.log(Object.getPrototypeOf(Dog.prototype) === Wolf.prototype) //true
 
-util.inherits(Dog.prototype, Wolf.prototype)
-Object.setPrototypeOf(Dog.prototype, Wolf.prototype)
+// util.inherits(Dog.prototype, Wolf.prototype)
+// Object.setPrototypeOf(Dog.prototype, Wolf.prototype)
