@@ -1,0 +1,20 @@
+{
+  "name": "ch-6-packages-and-dependencies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard"
+  },
+  "keywords": [],
+  "author": "Hafeez Syed",
+  "license": "MIT",
+  "dependencies": {
+    "pino": "^6.7.0"
+  },
+  "devDependencies": {
+    "standard": "^14.3.4"
+  }
+}
