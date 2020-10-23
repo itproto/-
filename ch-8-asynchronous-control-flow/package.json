@@ -1,0 +1,15 @@
+{
+  "name": "ch-8-asynchronous-control-flow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "callbacks-2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Hafeez Syed",
+  "license": "MIT",
+  "dependencies": {
+    "fastseries": "^2.0.0"
+  }
+}
