@@ -23,3 +23,16 @@ const opC = (cb) => {
     cb(null, 'C')
   }, 125)
 }
+
+const a = promisify(opA)
+const b = promisify(opB)
+const c = promisify(opC)
+
+
+async function run() {
+  print(await a())
+  print(await b())
+  print(await c())  
+}
+
+run()
