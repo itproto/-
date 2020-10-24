@@ -1,0 +1,12 @@
+const { EventEmitter } = require('events')
+const ee = new EventEmitter()
+ee.on('my-event', () => { console.log('my-event fired') })
+ee.emit('my-event')
+ee.emit('my-event')
+ee.emit('my-event')
+
+const ee2 = new EventEmitter()
+ee2.once('my-event 2', () => { console.log('my-event fired once only') })
+ee2.emit('my-event 2')
+ee2.emit('my-event 2')
+ee2.emit('my-event 2')
