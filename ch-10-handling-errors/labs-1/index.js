@@ -1,9 +1,19 @@
 'use strict'
 const assert = require('assert')
 
+const isValidURL = (url) => {
+  const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  const regex = new RegExp(expression);
+
+  return url.match(regex)
+}
+
 function parseUrl (str) {
-  const parsed = new URL(str)
-  return parsed
+  if (!isValidURL(str)) {
+    return null
+  }
+
+  return new URL(str)
 }
 
 assert.doesNotThrow(() => { parseUrl('invalid-url') })
