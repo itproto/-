@@ -1,6 +1,7 @@
 'use strict'
 const { Readable, Writable } = require('stream')
 const assert = require('assert')
+const { read } = require('fs').promises
 const createWritable = () => {
   const sink = []
   let piped = false
@@ -27,3 +28,6 @@ const readable = Readable.from(['a', 'b', 'c'])
 const writable = createWritable()
 
 // TODO - send all data from readable to writable:
+readable.on('data', (data) => { console.log('got data', data) })
+readable.on('end', () => { console.log('finished reading') })
+readable.pipe(writable)
