@@ -11,10 +11,19 @@ fs.mkdirSync(project)
 for (const f of files) fs.closeSync(fs.openSync(f, 'w'))
 
 const out = join(__dirname, 'out.txt')
+fs.writeFileSync(out, '')
 
 function exercise () {
   // TODO read the files in the project folder
   // and write the to the out.txt file
+  const totalFiles = files.length
+  let fileCount = 1
+
+  for(const fileName of files) {
+    const file =  fileCount < totalFiles ? `${basename(fileName)},` : basename(fileName)
+    fs.writeFileSync(out, file , {flag: 'a'})
+    fileCount++
+  }
 }
 
 exercise()

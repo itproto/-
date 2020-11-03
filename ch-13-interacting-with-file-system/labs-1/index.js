@@ -51,9 +51,14 @@ function exercise (project) {
       // TODO - only set the answer variable if the filepath
       // is both newly created AND does not point to a directory
 
-      answer = filepath
-    } catch (err) {
+      const isNewFile = files.has(filename) === false
+      const isDirectory = stat.isDirectory()
 
+      if (!isDirectory && isNewFile) {
+        answer = filepath
+      }
+    } catch (err) {
+        console.error(err)
     } 
   })
 }
