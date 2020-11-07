@@ -16,9 +16,10 @@ function exercise (myEnvVar) {
   } else {
       const { parse } = require('path')
       const { root } = parse(process.cwd())
-      const { spawn } = require('child_process')
+      const { spawn, spawnSync } = require('child_process')
+      const [ node ] = process.argv
 
-      const sp = spawn(process.execPath, [__filename], {
+      const sp = spawn(node, [__filename], {
           // cwd: root,
           env: { MY_ENV_VAR: myEnvVar }
       })

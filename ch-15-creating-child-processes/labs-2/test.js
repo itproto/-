@@ -33,12 +33,13 @@ function test (scenario = 0) {
     env: {SCENARIO: 1},
   })
   
+  console.log('S1: ', s1.stdout.toString())
   equal(s1.stdout.toString().trim(), 'test', 'should inherit stdout')
 
   const s2 = cp.spawnSync(node, [__filename], {
     env: {SCENARIO: 2},
   })
-
+  console.log('S2: ', s2.stderr.toString())
   equal(s2.stderr.toString().trim(), 'test', 'should expose stderr stream')
 
 
@@ -47,6 +48,7 @@ function test (scenario = 0) {
     env: {SCENARIO: 3},
   })
 
+  console.log(s3.stdout)
   equal(s3.stdout.length, 2, 'stdin should be ignored')
 
   console.log('passed!')

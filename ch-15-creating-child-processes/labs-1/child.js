@@ -1,5 +1,4 @@
 'use strict'
-return console.log(process.env)
 const assert = require('assert')
 const clean = (env) => Object.fromEntries(
   Object.entries(env).filter(([k]) => !/^(_.*|pwd|shlvl)/i.test(k))
