@@ -1,0 +1,19 @@
+{
+  "name": "2-test-harnesses",
+  "version": "1.0.0",
+  "description": "",
+  "main": "2-test-harnesses.js",
+  "scripts": {
+    "test:tap": "./node_modules/.bin/tap *-tap.test.js",
+    "test:jest": "./node_modules/.bin/jest *-jest.test.js",
+    "test:jest:coverage": "./node_modules/.bin/jest *-jest.test.js --coverage",
+    "test:jest:watch": "./node_modules/.bin/jest *-jest.test.js --watch"
+  },
+  "keywords": [],
+  "author": "Hafeez Syed",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "tap": "^14.10.8"
+  }
+}
